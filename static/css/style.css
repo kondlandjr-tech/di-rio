@@ -2,8 +2,8 @@
 
 :root {
     --cor-principal: #fff;
-    --cor-do-fundo: #000000;
-    --cor-card: rgba(255, 255, 255, 0.4);
+    --cor-do-fundo: #1f3572;
+    --cor-card: rgba(255, 255, 255, 0.521);
 }
 
 body::-webkit-scrollbar {
