@@ -95,6 +95,20 @@ def create():
     return render_template('create_card.html')
 
 # -------------------------
+# Deletar card
+# -------------------------
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete(id):
+    card = Card.query.get(id)
+
+    # Segurança: só deixa deletar se for do usuário logado
+    if card and card.user_email == session.get('user_email'):
+        db.session.delete(card)
+        db.session.commit()
+
+    return redirect('/index')
+
+# -------------------------
 # Formulário de criação
 # -------------------------
 @app.route('/form_create', methods=['GET', 'POST'])

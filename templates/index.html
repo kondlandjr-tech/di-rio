@@ -30,6 +30,11 @@
           <div class="card__text">
             <h2 class="card__title">{{el.title}}</h2>
             <p class="card__subtitle">{{el.subtitle}}</p>
+            <form action="/delete/{{ el.id }}" method="POST">
+              <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">
+                Excluir
+              </button>
+            </form>
           </div>
         </a>
       </li>
